@@ -15,3 +15,7 @@ $sagePay->setDeliverySameAsBilling();
 
 $sagePay->setSuccessURL('https://www.yoururl.com/success.php');
 $sagePay->setFailureURL('https://www.yoururl.org/fail.php');
+
+
+//get crypt content for your form "crypt" field
+$cryptFieldContent = $sagePay->getCrypt();
