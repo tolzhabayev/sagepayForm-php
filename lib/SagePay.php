@@ -1,4 +1,11 @@
 <?php
+/**
+ * 
+ * @author    Timur Olzhabayev
+ * @copyright Copyright (c) 2013, Timur Olzhabayev
+ * @license   http://www.opensource.org/licenses/mit-license.php
+ */
+ 
 
 class SagePay {
 
