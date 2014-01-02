@@ -1,5 +1,6 @@
 <?php
 /**
+ * SagePay Class for Form Integration Method, utilizes Protocol V3
  * 
  * @author    Timur Olzhabayev
  * @copyright Copyright (c) 2013, Timur Olzhabayev
