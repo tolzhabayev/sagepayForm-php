@@ -15,7 +15,12 @@ $sagePay->setDeliverySameAsBilling();
 
 $sagePay->setSuccessURL('https://www.yoururl.com/success.php');
 $sagePay->setFailureURL('https://www.yoururl.org/fail.php');
+?>
 
-
-//get crypt content for your form "crypt" field
-$cryptFieldContent = $sagePay->getCrypt();
+<form method="POST" id="SagePayForm" action="https://test.sagepay.com/gateway/service/vspform-register.vsp">
+	<input type="hidden" name="VPSProtocol" value= "3.00">
+	<input type="hidden" name="TxType" value= "PAYMENT">
+	<input type="hidden" name="Vendor" value= "YOURVERNODID">
+	<input type="hidden" name="Crypt" value= "<?php echo $sagePay->getCrypt()">
+	<input type="submit" value="continue to SagePay">
+</form>
