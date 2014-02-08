@@ -460,7 +460,6 @@ class SagePay {
 
 	protected function encryptAndEncode($strIn) {
 		$strIn = $this->pkcs5_pad($strIn, 16);
-        $strCrypt = mcrypt_encrypt(MCRYPT_RIJNDAEL_128, $this->encryptPassword, $strIn, MCRYPT_MODE_CBC);
 		return "@".bin2hex(mcrypt_encrypt(MCRYPT_RIJNDAEL_128, $this->encryptPassword, $strIn, MCRYPT_MODE_CBC, $this->encryptPassword));
 	}
 
