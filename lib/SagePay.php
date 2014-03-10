@@ -466,7 +466,7 @@ class SagePay {
 	protected function decodeAndDecrypt($strIn) {
 		$strIn = substr($strIn, 1);
 		$strIn = pack('H*', $strIn);
-		return mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $this->encryptPassword, $strIn, MCRYPT_MODE_CBC);
+		return mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $this->encryptPassword, $strIn, MCRYPT_MODE_CBC, $this->encryptPassword);
 	}
 
 
