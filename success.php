@@ -2,6 +2,8 @@
 
 if ($_REQUEST['crypt']) {
 	$responseArray = $sagePay -> decode($_REQUEST['crypt']);
-	print_r('<pre>'.$responseArray.'</pre>');
+	print '<pre>';
+	print_r($responseArray);
+	print '</pre>';
 	exit;
 }
