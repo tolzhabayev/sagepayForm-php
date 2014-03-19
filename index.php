@@ -21,6 +21,6 @@ $sagePay->setFailureURL('https://www.yoururl.org/fail.php');
 	<input type="hidden" name="VPSProtocol" value= "3.00">
 	<input type="hidden" name="TxType" value= "PAYMENT">
 	<input type="hidden" name="Vendor" value= "YOURVERNODID">
-	<input type="hidden" name="Crypt" value= "<?php echo $sagePay->getCrypt()">
+	<input type="hidden" name="Crypt" value= "<?php echo $sagePay->getCrypt(); ?>">
 	<input type="submit" value="continue to SagePay">
 </form>
