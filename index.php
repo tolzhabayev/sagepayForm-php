@@ -13,6 +13,47 @@ $sagePay->setBillingAddress1('Bahnhofstr. 1');
 $sagePay->setBillingCountry('de');
 $sagePay->setDeliverySameAsBilling();
 
+
+/* Example of using BasketXML */
+$xml = new DOMDocument();
+$basketNode = $xml->createElement("basket");
+$itemNode = $xml->createElement("item");
+
+$descriptionNode =  $xml->createElement( 'description' );
+$descriptionNode->nodeValue = 'First Item Description';
+$itemNode -> appendChild($descriptionNode);
+
+
+$quantityNode =  $xml->createElement('quantity');
+$quantityNode->nodeValue = '1';
+$itemNode -> appendChild($quantityNode);
+
+
+
+$unitNetAmountNode =  $xml->createElement('unitNetAmount');
+$unitNetAmountNode->nodeValue = '90.00';
+$itemNode -> appendChild($unitNetAmountNode);
+
+$unitTaxAmountNode =  $xml->createElement('unitTaxAmount');
+$unitTaxAmountNode->nodeValue = '10.00';
+$itemNode -> appendChild($unitTaxAmountNode);
+
+
+$unitGrossAmountNode =  $xml->createElement('unitGrossAmount');
+$unitGrossAmountNode->nodeValue = '100.00';
+$itemNode -> appendChild($unitGrossAmountNode);
+
+$totalGrossAmountNode =  $xml->createElement('totalGrossAmount');
+$totalGrossAmountNode->nodeValue = '100.00';
+$itemNode -> appendChild($totalGrossAmountNode);
+
+$basketNode->appendChild( $itemNode );
+$xml->appendChild( $basketNode );
+
+$sagePay->setBasketXML($xml->saveHTML());
+
+
+
 $sagePay->setSuccessURL('https://www.yoururl.com/success.php');
 $sagePay->setFailureURL('https://www.yoururl.org/fail.php');
 ?>
