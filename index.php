@@ -23,12 +23,9 @@ $descriptionNode =  $xml->createElement( 'description' );
 $descriptionNode->nodeValue = 'First Item Description';
 $itemNode -> appendChild($descriptionNode);
 
-
 $quantityNode =  $xml->createElement('quantity');
 $quantityNode->nodeValue = '1';
 $itemNode -> appendChild($quantityNode);
-
-
 
 $unitNetAmountNode =  $xml->createElement('unitNetAmount');
 $unitNetAmountNode->nodeValue = '90.00';
@@ -37,7 +34,6 @@ $itemNode -> appendChild($unitNetAmountNode);
 $unitTaxAmountNode =  $xml->createElement('unitTaxAmount');
 $unitTaxAmountNode->nodeValue = '10.00';
 $itemNode -> appendChild($unitTaxAmountNode);
-
 
 $unitGrossAmountNode =  $xml->createElement('unitGrossAmount');
 $unitGrossAmountNode->nodeValue = '100.00';
