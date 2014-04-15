@@ -115,7 +115,9 @@ class SagePay {
 	}
 
 	public function setVendorTxCode($code) {
-		$this->vendorTxCode = $code;
+        $this->vendorTxCode = $code;
+
+        return $this;
 	}
 	public function getVendorTxCode() {
 		return $this->vendorTxCode;
@@ -123,7 +125,9 @@ class SagePay {
 
 	public function setAmount($amount) {
 		$this->amount = number_format($amount, 2);
-	}
+    
+        return $this;    
+    }
 
 	public function getAmount() {
 		return $this->amount;
@@ -135,66 +139,86 @@ class SagePay {
 
 	public function setCurrency($currency) {
 		$this->currency = strtoupper($currency);
-	}
+    
+        return $this;
+    }
 
 	public function getSuccessURL() {
 		return $this->successURL;
 	}
 	public function setSuccessURL($url) {
 		$this->successURL = $url;
-	}
+    
+        return $this;
+    }
 	public function getFailureURL() {
 		return $this->failureURL;
 	}
 	public function setFailureURL($url) {
 		$this->failureURL = $url;
-	}
+    
+        return $this;
+    }
 
 	public function getDescription() {
 		return $this->description;
 	}
 	public function setDescription($description) {
 		$this->description = $description;
-	}
+    
+        return $this;
+    }
 
 	public function getCustomerName() {
 		return $this->customerName;
 	}
 	public function setCustomerName($name) {
 		$this->customerName = $name;
-	}
+    
+        return $this;
+    }
 
 	public function getCustomerEMail() {
 		return $this->customerEMail;
 	}
 	public function setCustomerEMail($email) {
 		$this->customerEMail = $email;
-	}
+    
+        return $this;
+    }
 
 	public function getVendorEMail() {
 		return $this->vendorEMail;
 	}
 	public function setVendorEMail($email) {
 		$this->vendorEMail = $email;
-	}
+    
+        return $this;
+    }
 
 	public function getSendEMail() {
 		return $this->sendEMail;
 	}
 	public function setSendEMail($sendEmail = 1) {
 		$this->sendEMail = $sendEmail;
-	}
+    
+        return $this;
+    }
 
 	public function getEMailMessage() {
 		return $this->eMailMessage;
 	}
 	public function setEMailMessage($emailMessage) {
 		$this->eMailMessage = $emailMessage;
-	}
+
+        return $this;
+    }
 
 	public function setBillingFirstnames($billingFirstnames) {
 		$this->billingFirstnames = $billingFirstnames;
-	}
+
+        return $this;
+    }
 
 	public function getBillingFirstnames() {
 		return $this->billingFirstnames;
@@ -202,7 +226,9 @@ class SagePay {
 
 	public function setBillingSurname($billingSurname) {
 		$this->billingSurname = $billingSurname;
-	}
+    
+        return $this;
+    }
 
 	public function getBillingSurname() {
 		return $this->billingSurname;
@@ -210,7 +236,9 @@ class SagePay {
 
 	public function setBillingAddress1($billingAddress1) {
 		$this->billingAddress1 = $billingAddress1;
-	}
+    
+        return $this;
+    }
 
 	public function getBillingAddress1() {
 		return $this->billingAddress1;
@@ -218,7 +246,9 @@ class SagePay {
 
 	public function setBillingAddress2($billingAddress2) {
 		$this->billingAddress2 = $billingAddress2;
-	}
+    
+        return $this;
+    }
 
 	public function getBillingAddress2() {
 		return $this->billingAddress2;
@@ -226,7 +256,9 @@ class SagePay {
 
 	public function setBillingCity($billingCity) {
 		$this->billingCity = $billingCity;
-	}
+    
+        return $this;
+    }
 
 	public function getBillingCity() {
 		return $this->billingCity;
@@ -234,7 +266,9 @@ class SagePay {
 
 	public function setBillingPostCode($billingPostCode) {
 		$this->billingPostCode = $billingPostCode;
-	}
+        
+        return $this;
+    }
 
 	public function getBillingPostCode() {
 		return $this->billingPostCode;
@@ -242,7 +276,9 @@ class SagePay {
 
 	public function setBillingState($billingState) {
 		$this->billingState = $billingState;
-	}
+    
+        return $this;
+    }
 
 	public function getBillingState() {
 		return $this->billingState;
@@ -253,11 +289,15 @@ class SagePay {
 	}
 	public function setBillingCountry($countryISO3166) {
 		$this->billingCountry = strtoupper($countryISO3166);
-	}
+
+        return $this;
+    }
 
 	public function setBillingPhone($phone) {
 		$this->billingPhone = $phone;
-	}
+    
+        return $this;
+    }
 
 	public function getBillingPhone() {
 		return $this->billingPhone;
@@ -265,7 +305,9 @@ class SagePay {
 
 	public function setDeliverySurname($surname) {
 		$this->deliverySurname = $surname;
-	}
+
+        return $this;
+    }
 
 	public function getDeliverySurname() {
 		return $this->deliverySurname;
@@ -274,7 +316,9 @@ class SagePay {
 
 	public function setDeliveryFirstnames($firstnames) {
 		$this->deliveryFirstnames = $firstnames;
-	}
+    
+        return $this;
+    }
 
 	public function getDeliveryFirstnames() {
 		return $this->deliveryFirstnames;
@@ -282,7 +326,9 @@ class SagePay {
 
 	public function setDeliveryAddress1($address) {
 		$this->deliveryAddress1 = $address;
-	}
+    
+        return $this;
+    }
 
 	public function getDeliveryAddress1() {
 		return $this->deliveryAddress1;
@@ -290,7 +336,9 @@ class SagePay {
 
 	public function setDeliveryAddress2($address) {
 		$this->deliveryAddress2 = $address;
-	}
+    
+        return $this;
+    }
 
 	public function getDeliveryAddress2() {
 		return $this->deliveryAddress2;
@@ -298,7 +346,9 @@ class SagePay {
 
 	public function setDeliveryCity($city) {
 		$this->deliveryCity = $city;
-	}
+    
+        return $this;
+    }
 
 	public function getDeliveryCity() {
 		return $this->deliveryCity;
@@ -306,7 +356,9 @@ class SagePay {
 
 	public function setDeliveryPostCode($zip) {
 		$this->deliveryPostCode = $zip;
-	}
+    
+        return $this;
+    }
 
 	public function getDeliveryPostCode() {
 		return $this->deliveryPostCode;
@@ -314,7 +366,9 @@ class SagePay {
 
 	public function setDeliveryCountry($country) {
 		$this->deliveryCountry = strtoupper($country);
-	}
+    
+        return $this;
+    }
 
 	public function getDeliveryCountry() {
 		return $this->deliveryCountry;
@@ -323,7 +377,9 @@ class SagePay {
 
 	public function setDeliveryState($state) {
 		$this->deliveryState = $state;
-	}
+    
+        return $this;
+    }
 
 	public function getDeliveryState() {
 		return $this->deliveryState;
@@ -331,7 +387,9 @@ class SagePay {
 
 	public function setDeliveryPhone($phone) {
 		$this->deliveryPhone = $phone;
-	}
+    
+        return $this;
+    }
 
 	public function getDeliveryPhone() {
 		return $this->deliveryPhone;
@@ -339,15 +397,18 @@ class SagePay {
 
 	public function setBasket($basket) {
 		$this->basket = $basket;
-	}
+    
+        return $this;
+    }
 
 	public function getBasket() {
 		return $this->basket;
 	}
 
 	public function setAllowGiftAid($allowGiftAid = 0) {
-		$this->allowGiftAid = $allowGiftAid;
+        $this->allowGiftAid = $allowGiftAid;
 
+        return $this;
 	}
 
 	public function getAllowGiftAid() {
@@ -356,7 +417,9 @@ class SagePay {
 
 	public function setApplyAVSCV2($avsCV2 = 0) {
 		$this->applyAVSCV2 = $avsCV2;
-	}
+    
+        return $this;
+    }
 
 	public function getApplyAVSCV2() {
 		return $this->applyAVSCV2;
@@ -364,7 +427,9 @@ class SagePay {
 
 	public function setApply3DSecure($apply3DSecure = 0) {
 		$this->apply3DSecure = $apply3DSecure;
-	}
+    
+        return $this;
+    }
 
 	public function getApply3DSecure() {
 		return $this->apply3DSecure;
@@ -373,7 +438,9 @@ class SagePay {
 
 	public function setBillingAgreement ($billingAgreement = 0) {
 		$this->billingAgreement = $billingAgreement;
-	}
+    
+        return $this;
+    }
 
 	public function getBillingAgreement() {
 		return $this->billingAgreement;
@@ -382,7 +449,9 @@ class SagePay {
 
 	public function setBasketXML ($basketXML) {
 		$this->basketXML = $basketXML;
-	}
+
+        return $this;
+    }
 
 	public function getBasketXML() {
 		return $this->basketXML;
@@ -390,7 +459,9 @@ class SagePay {
 
 	public function setCustomerXML ($customerXML) {
 		$this->customerXML = $customerXML;
-	}
+    
+        return $this;
+    }
 
 	public function getCustomerXML() {
 		return $this->customerXML;
@@ -398,7 +469,9 @@ class SagePay {
 
 	public function setSurchargeXML ($surchargeXML) {
 		$this->surchargeXML = $surchargeXML;
-	}
+    
+        return $this;
+    }
 
 	public function getSurchargeXML() {
 		return $this->surchargeXML;
@@ -406,7 +479,9 @@ class SagePay {
 
 	public function setVendorData ($vendorData) {
 		$this->vendorData = $vendorData;
-	}
+    
+        return $this;
+    }
 
 	public function getVendorData() {
 		return $this->vendorData;
@@ -414,7 +489,9 @@ class SagePay {
 
 	public function setReferrerID ($referrerID) {
 		$this->referrerID = $referrerID;
-	}
+    
+        return $this;
+    }
 
 	public function getReferrerID() {
 		return $this->referrerID;
@@ -423,7 +500,9 @@ class SagePay {
 
 	public function setLanguage ($language) {
 		$this->language = $language;
-	}
+    
+        return $this;
+    }
 
 	public function getLanguage() {
 		return $this->language;
@@ -432,7 +511,9 @@ class SagePay {
 
 	public function setWebsite ($website) {
 		$this->website = $website;
-	}
+    
+        return $this;
+    }
 
 	public function getWebsite() {
 		return $this->website;
