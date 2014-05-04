@@ -1,4 +1,5 @@
 <?php
+require_once ('SagePay.php');
 
 if ($_REQUEST['crypt']) {
 	$responseArray = $sagePay -> decode($_REQUEST['crypt']);
