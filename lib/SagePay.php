@@ -164,8 +164,7 @@ class SagePay {
 		return $this->description;
 	}
 	public function setDescription($description) {
-		$this->description = $description;
-    
+		$this->description = mb_substr($description, 0, 100);
         return $this;
     }
 
