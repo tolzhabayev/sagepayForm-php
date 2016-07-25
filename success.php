@@ -2,6 +2,7 @@
 require_once ('SagePay.php');
 
 if ($_REQUEST['crypt']) {
+	$sagePay = new SagePay();
 	$responseArray = $sagePay -> decode($_REQUEST['crypt']);
 
 	//Check status of response
