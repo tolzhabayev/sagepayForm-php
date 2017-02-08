@@ -529,6 +529,8 @@ class SagePay {
 		$this->setDeliveryCountry($this->getBillingCountry());
 		$this->setDeliveryState($this->getBillingState());
 		$this->setDeliveryPhone($this->getBillingPhone());
+
+		return $this;
 	}
 
 
