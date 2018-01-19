@@ -1,0 +1,9 @@
+{
+    "name": "tolzhabayev/sagepayform-php",
+    "description": "A simple PHP class to integrate sagepayForm v3.00 into your website.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "files": ["lib/SagePay.php"]
+    }
+}

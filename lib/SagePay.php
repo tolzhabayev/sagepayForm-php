@@ -542,13 +542,13 @@ class SagePay {
 
 	protected function encryptAndEncode($strIn) {
 		$strIn = $this->pkcs5_pad($strIn, 16);
-		return "@".bin2hex(mcrypt_encrypt(MCRYPT_RIJNDAEL_128, $this->encryptPassword, $strIn, MCRYPT_MODE_CBC, $this->encryptPassword));
+		return "@".bin2hex(openssl_encrypt($string, 'AES-128-CBC', $this->encryptPassword, OPENSSL_RAW_DATA, $this->encryptPassword));
 	}
 
 	protected function decodeAndDecrypt($strIn) {
 		$strIn = substr($strIn, 1);
 		$strIn = pack('H*', $strIn);
-		return mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $this->encryptPassword, $strIn, MCRYPT_MODE_CBC, $this->encryptPassword);
+		return openssl_decrypt($strIn, 'AES-128-CBC', $this->encryptPassword, OPENSSL_RAW_DATA, $this->encryptPassword);
 	}
 
 
