@@ -541,7 +541,7 @@ class SagePay {
 		return $sagePayResponse;
 	}
 	
-	protected function encryptAndEncode($strIn): string
+	protected function encryptAndEncode($strIn)
 	{
 		$strIn = $this->pkcs5_pad($strIn, 16);
 		$encrypted = openssl_encrypt($strIn, $this->encryptMethod, $this->encryptPassword, OPENSSL_RAW_DATA, $this->encryptPassword);
@@ -550,7 +550,7 @@ class SagePay {
 
 	}
 	
-	protected function decodeAndDecrypt(string $strIn):string
+	protected function decodeAndDecrypt($strIn)
 	{
 		$strIn = substr($strIn, 1);
 		$strIn = pack('H*', $strIn);
