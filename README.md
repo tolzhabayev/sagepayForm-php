@@ -1,6 +1,9 @@
 sagepayForm-php
 ===============
 
+## Consider using this library instead https://github.com/thephpleague/omnipay-sagepay
+
+
 A simple class to integrate sagepayForm v3.00 into your website. Since there is now sage php integration kit out yet - may be useful for someone.
 
 To get started change the protected field $encryptPassword and look into index.php for example form, success.php for example response parsing.`
