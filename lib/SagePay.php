@@ -52,7 +52,8 @@ class SagePay {
 	protected $language;
 	protected $website;
 	protected $encryptPassword = "PUTYOURPASSWORDHERE";
-
+	protected $encryptMethod = "AES-128-CBC";
+	
 	public function __construct() {
 		$this->setVendorTxCode($this->createVendorTxCode());
 	}
@@ -539,16 +540,23 @@ class SagePay {
 		parse_str($decodedString, $sagePayResponse);
 		return $sagePayResponse;
 	}
-
-	protected function encryptAndEncode($strIn) {
+	
+	protected function encryptAndEncode($strIn)
+	{
 		$strIn = $this->pkcs5_pad($strIn, 16);
-		return "@".bin2hex(mcrypt_encrypt(MCRYPT_RIJNDAEL_128, $this->encryptPassword, $strIn, MCRYPT_MODE_CBC, $this->encryptPassword));
-	}
+		$encrypted = openssl_encrypt($strIn, $this->encryptMethod, $this->encryptPassword, OPENSSL_RAW_DATA, $this->encryptPassword);
+		$encrypted = "@".bin2hex($encrypted);
+		return $encrypted;
 
-	protected function decodeAndDecrypt($strIn) {
+	}
+	
+	protected function decodeAndDecrypt($strIn)
+	{
 		$strIn = substr($strIn, 1);
 		$strIn = pack('H*', $strIn);
-		return mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $this->encryptPassword, $strIn, MCRYPT_MODE_CBC, $this->encryptPassword);
+		$decrypted = openssl_decrypt($strIn, $this->encryptMethod, $this->encryptPassword, OPENSSL_RAW_DATA, $this->encryptPassword);
+		return $decrypted;
+
 	}
 
 
